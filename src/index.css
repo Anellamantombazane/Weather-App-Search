@@ -1,3 +1,12 @@
 body {
-  background-color: #bae8e8;
+  background-color: #627676;
+  font-family: "Sedan", serif;
+}
+.my-weather {
+  background: #bae8e8;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: #3b4444;
 }
