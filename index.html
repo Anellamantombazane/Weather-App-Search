@@ -12,15 +12,15 @@
   <body> 
     <div class="my-weather">
     <header>
-      <form class="search-form">
-        <input type="search" placeholder="Enter a city..." required class="search-form-input"/>
+      <form class="search-form" id="search-form">
+        <input type="search" placeholder="Enter a city..." required class="search-form-input" id="search-form-input"/>
         <input type="submit" value="search" class="search-form-submit" />
       </form>
     </header>
     <main>  
         <div class="current-weather">
         <div>
-        <h1 class="current-weather-city">
+        <h1 class="current-weather-city" id="current-weather-city">
             Nkandla
         </h1> 
         <p class="current-weather-details">
@@ -54,6 +54,7 @@
         >Netlify</a
       >
     </footer> 
-    </div>
+    </div> 
+    <script src="src/index.js"></script>
   </body>
 </html>
