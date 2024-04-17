@@ -12,26 +12,30 @@
   <body> 
     <div class="my-weather">
     <header>
-      <form>
-        <input type="search" placeholder="Enter a city..." required />
-        <input type="submit" />
+      <form class="search-form">
+        <input type="search" placeholder="Enter a city..." required class="search-form-input"/>
+        <input type="submit" value="search" class="search-form-submit" />
       </form>
     </header>
-    <main> 
+    <main>  
+        <div class="current-weather">
         <div>
-        <h1>
+        <h1 class="current-weather-city">
             Nkandla
         </h1> 
-        <p>
+        <p class="current-weather-details">
         Tuesday 12:02, mostly sunny 
         </br> 
-        humidity: 17%, wind: 87km/h 
+        humidity: <strong>17%</strong>, wind: <strong>87km/h</strong>  
         </p> 
         </div> 
          
-        <h3>
-            🌤️18&#8451
-        </h3>
+        <div class="current-weather-temperature">
+            <div class="current-weather-temperature-icon">🌤️</div>
+            <div class="current-weather-temperature-value">18</div>
+           <div class="current-weather-temperature-unit"> &#8451</div>
+        </div> 
+        </div>
     </main>
 
     <footer>

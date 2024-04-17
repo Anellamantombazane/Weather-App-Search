@@ -10,3 +10,71 @@ body {
   border-radius: 16px;
   box-shadow: #3b4444;
 }
+header {
+  border-bottom: #ffffff;
+  padding: 0 0 30px 0;
+}
+main {
+  padding: 30px 0 0 0;
+}
+.search-form-input {
+  background-color: #ffffff;
+  border: none;
+  width: 80%;
+  border-radius: 6px;
+  padding: 15px 20px;
+  font-size: 18px;
+}
+.search-form-submit {
+  background-color: #272343;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 16px;
+}
+.current-weather {
+  display: flex;
+  justify-content: space-between;
+}
+.current-weather-city {
+  margin: 0;
+  font-size: 40px;
+  line-height: 48px;
+}
+.current-weather-details {
+  font-size: 16px;
+  line-height: 20px;
+  color: #272343;
+}
+.current-weather-details strong {
+  color: #b61aae;
+}
+.current-weather-temperature {
+  display: flex;
+}
+.current-weather-temperature-icon {
+  font-size: 44px;
+  margin-top: 22px;
+}
+.current-weather-temperature-value {
+  font-size: 88px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+.current-weather-temperature-unit {
+  margin-top: 30px;
+  font-size: 28px;
+}
+
+a {
+  color: #272343;
+}
+
+footer {
+  border-bottom: #ffffff;
+  padding: 30px 0 0 0;
+  text-align: center;
+  color: #829292;
+  font-size: 13px;
+}
