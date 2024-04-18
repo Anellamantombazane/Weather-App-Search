@@ -66,6 +66,13 @@ main {
   margin-top: 12px;
   font-size: 28px;
 }
+.weather-forecast {
+  margin-top: 20px;
+}
+.weather-forecast-date {
+  font-size: 16px;
+  color: black;
+}
 
 a {
   color: #272343;
