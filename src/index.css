@@ -54,16 +54,16 @@ main {
   display: flex;
 }
 .current-weather-temperature-icon {
-  font-size: 44px;
-  margin-top: 22px;
+  width: 88px;
+  height: 88px;
 }
 .current-weather-temperature-value {
   font-size: 88px;
-  margin-left: 10px;
   font-weight: bold;
+  line-height: 88px;
 }
 .current-weather-temperature-unit {
-  margin-top: 30px;
+  margin-top: 12px;
   font-size: 28px;
 }
 
