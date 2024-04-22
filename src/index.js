@@ -50,7 +50,7 @@ function searchEngine(event) {
 }
 function getForecast(city) {
   let apiKey = "cf5fo805a314e7b0e5d7t87febb8a29a";
-  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apikey}&unit=metric`;
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&unit=metric`;
   axios(apiURL).then(displayForecast);
 }
 
@@ -87,6 +87,7 @@ function displayForecast(response) {
        </div>
      </div>`;
     }
+    console.log();
   });
 
   let forecastElement = document.querySelector("#weather-forecast");

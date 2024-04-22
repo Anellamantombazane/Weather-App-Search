@@ -68,8 +68,9 @@ main {
 }
 .weather-forecast {
   margin-top: 20px;
+  text-align: center;
 }
-.weather-forecast-date {
+.weather-forecast-day {
   font-size: 16px;
   color: black;
   opacity: 0.5;
@@ -80,7 +81,7 @@ main {
   display: block;
   margin: 0 auto;
 }
-.weather-forecast-temperature {
+.weather-forecast-temperatures {
   font-size: 13px;
 }
 .weather-forecast-temperature-min {
