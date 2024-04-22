@@ -48,51 +48,30 @@ function searchEngine(event) {
   let searchFormInput = document.querySelector("#search-form-input");
   searchCity(searchFormInput.value);
 }
-function getForecast(city) {
-  let apiKey = "cf5fo805a314e7b0e5d7t87febb8a29a";
-  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&unit=metric`;
-  axios(apiURL).then(displayForecast);
-}
-
-function formatDay(timestamp) {
-  let date = new Date(timestamp * 1000);
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
-
-  return days[date.getDate()];
-}
-
-function displayForecast(response) {
-  response.data.daily.forEach(function (day, index) {
-    if (index < 5) {
-      console.log(response.data);
-
-      let forecastHTML = "";
-
-      forecastHTML =
-        forecastHTML +
-        `
-
-     <div class="weather-forecast">
-       <div class="weather-forecast-date">tue</div>
-       <div>
-       <img src"${data.condition.icon_url}" class="weather-forecast--icon"/>
-       </div>
-       <div class="weather-forecast-temperature">
-         <span class="weather-forecast-temperature-max">${Math.round(
-           day.temperature.maximum
-         )}&#8451</span>
-         <span class="weather-forecast-temperature-min">${Math.round(
-           day.temperature.minimum
-         )}&#8451</span>
-       </div>
-     </div>`;
-    }
-    console.log();
+function displayForecast() {
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHTML = "";
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` 
+        <div class="weather-forecast-day"> 
+            <div class="weather-forecast-date">${day}</div> 
+            <div class="weather-forecast-icon"> 
+            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png" alt="" width="44"> 
+            </div>  
+            <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-temperature-max">32 &#8451</span> 
+            <span class="weather-forecast-temperature-min">19 &#8451</span>  
+            </div>
+          </div>
+`;
   });
-
   let forecastElement = document.querySelector("#weather-forecast");
   forecastElement.innerHTML = forecastHTML;
 }
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", searchEngine);
+searchCity();
+displayForecast();
