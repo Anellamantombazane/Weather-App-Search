@@ -16,7 +16,9 @@ function refreshWeather(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
   icon.innerHTML = `<img src="${response.data.condition.icon_url}" class= "current-weather-temperature-icon"/>`;
+  getForecast(response.data.city);
 }
+
 function formatDate(date) {
   let hours = date.getHours();
   let minutes = date.getMinutes();
@@ -48,27 +50,35 @@ function searchEngine(event) {
   let searchFormInput = document.querySelector("#search-form-input");
   searchCity(searchFormInput.value);
 }
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
 function getForecast(city) {
   let apiKey = "cf5fo805a314e7b0e5d7t87febb8a29a";
   let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&unit=metric`;
   axios.get(apiURL).then(displayForecast);
 }
 
-function displayForecast() {
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+function displayForecast(response) {
   let forecastHTML = "";
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      ` 
+  response.data.daily.forEach(function (day, index) {
+    forecastHTML += ` 
         <div class="weather-forecast-day"> 
-            <div class="weather-forecast-date">${day}</div> 
+            <div class="weather-forecast-date">${formatDay(day.time)}</div> 
             <div class="weather-forecast-icon"> 
-            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png" alt="" width="44"> 
+            <img src="${day.condition.icon_url}"/> 
             </div>  
             <div class="weather-forecast-temperatures">
-            <span class="weather-forecast-temperature-max">32 &#8451</span> 
-            <span class="weather-forecast-temperature-min">19 &#8451</span>  
+            <span class="weather-forecast-temperature-max"><strong>${
+              day.temperature.maximum
+            }&#8451</strong></span> 
+            <span class="weather-forecast-temperature-min">${
+              day.temperature.minimum
+            }&#8451</span>  
             </div>
           </div>
 `;
@@ -79,6 +89,3 @@ function displayForecast() {
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", searchEngine);
-searchCity();
-getForecast();
-displayForecast();

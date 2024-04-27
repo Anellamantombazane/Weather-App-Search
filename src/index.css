@@ -70,6 +70,11 @@ main {
   margin-top: 20px;
   text-align: center;
 }
+.weather-forecast-day {
+  display: inline-block;
+  margin-right: 10px;
+}
+
 .weather-forecast-date {
   font-size: 16px;
   color: black;
